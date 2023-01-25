@@ -1,0 +1,31 @@
+{
+  "name": "cypresslearning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run script || npm run posttest",
+    "script": "cypress run --spec cypress/e2e/BDD/features/login.feature --headed --browser chrome",
+    "posttest": "node cucumber-html-report.js"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/e2e/BDD/stepdefinitions/*.js",
+    "json": {
+      "enabled": true,
+      "formatter": "cypress/e2e/JsonFormator/cucumber-json-formatter",
+      "output": "cypress/e2e/Reports/json/report.json"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cypress/xpath": "2.0.3",
+    "cypress": "12.3.0",
+    "cypress-mochawesome-reporter": "^3.2.3"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.2",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "multiple-cucumber-html-reporter": "^3.1.0"
+  }
+}

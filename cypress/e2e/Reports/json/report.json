@@ -1,0 +1,70 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "to-test-login-functionality;verify-login-functionality-with-incorrect-credentials",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Verify Login functionality with incorrect credentials",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "line": 4,
+            "name": "user navigate to WebApp",
+            "result": {
+              "duration": 2051000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "And ",
+            "line": 5,
+            "name": "user enter username as \"Sherlock\" and Password as \"Holmes\"",
+            "result": {
+              "duration": 519000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "When ",
+            "line": 6,
+            "name": "user click on Login button",
+            "result": {
+              "duration": 608000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "line": 7,
+            "name": "user should see \"An internal error has occurred and has been logged.\" error message",
+            "result": {
+              "duration": 35000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "not available:0"
+            }
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "to-test-login-functionality",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "To Test Login functionality",
+    "uri": "cypress\\e2e\\BDD\\features\\login.feature"
+  }
+]

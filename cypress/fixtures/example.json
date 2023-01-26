@@ -1,7 +1,14 @@
 {
-  "username": "sherlock",
-  "password": "holmes",
-  "credentials": [{"username": "sherlock",
-  "password": "holmes"}, {"username": "sherlock",
-  "password": "holmes"}]
+  "userregistration": {
+    "firstname": "sherlock",
+    "lastname": "holmes",
+    "address": "519 sector 13",
+    "city": "Delhi",
+    "state": "New Delhi",
+    "zipcode": "11098",
+    "phone": "9877667788",
+    "ssn": "ADHLCLIDK",
+    "username": "jagjeet",
+    "password": "holmes"
+  }
 }

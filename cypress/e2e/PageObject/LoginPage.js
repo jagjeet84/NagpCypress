@@ -21,6 +21,10 @@ class loginPage{
     getMessage(){
      return cy.get("#mainPanel #rightPanel > p",{ timeout: 10000})
     }
+
+    getRegisterLink(){
+        return cy.contains("Register")
+    }
 }
 
 export default loginPage

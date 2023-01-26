@@ -7,19 +7,19 @@ class loginPage{
     }
 
     getUsername(){
-       return cy.get("input[name='username']")   
+       return cy.get("input[name='username']",{ timeout: 10000})   
     }
 
     getPassword(){
-        return cy.get("input[name='password']")
+        return cy.get("input[name='password']",{ timeout: 10000})
     }
 
     getSubmit(){
-        return cy.get("input[type='submit']")
+        return cy.get("input[type='submit']",{ timeout: 10000})
     }
 
-    getErrorMessage(){
-     return cy.get("#mainPanel #rightPanel > p")
+    getMessage(){
+     return cy.get("#mainPanel #rightPanel > p",{ timeout: 10000})
     }
 }
 

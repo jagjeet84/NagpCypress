@@ -38,8 +38,8 @@ module.exports = defineConfig({
       runMode: 0
     },
     env : {
-      USERNAME: "JagjeetCH",
-      PASSWORD: "J1234"
+      USERNAME: "sherlock",
+      PASSWORD: "holmes"
     }
   },
 });

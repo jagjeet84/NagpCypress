@@ -36,10 +36,6 @@ module.exports = defineConfig({
     setupNodeEvents,
     retries: {
       runMode: 0
-    },
-    env : {
-      USERNAME: "sherlock",
-      PASSWORD: "holmes"
     }
   },
 });

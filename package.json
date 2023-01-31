@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run script || npm run posttest",
-    "script": "cypress run --spec cypress/e2e/BDD/features/login.feature --headed --browser chrome",
+    "script": "cypress run --spec cypress/e2e/BDD/features/*.feature --headed --browser chrome",
     "posttest": "node cucumber-html-report.js"
   },
   "cypress-cucumber-preprocessor": {

@@ -1,52 +1,55 @@
 /// <reference types="cypress" />
 
-class UserRegistration{
+class UserRegistration {
+    getTitle() {
+       return cy.get('.title')
+    }
 
-    getFirstNameTextfield(){
+    getFirstNameTextfield() {
         return cy.get("input[name='customer.firstName']")
     }
-    
-    getLastNameTextfield(){
+
+    getLastNameTextfield() {
         return cy.get("input[name='customer.lastName']")
     }
-    
-    getAddressTextfield(){
+
+    getAddressTextfield() {
         return cy.get("input[name='customer.address.street']")
     }
 
-    getCityTextfield(){
+    getCityTextfield() {
         return cy.get("input[name='customer.address.city']")
     }
 
-    getStateTextfield(){
+    getStateTextfield() {
         return cy.get("input[name='customer.address.state']")
     }
 
-    getZipCodeTextfield(){
+    getZipCodeTextfield() {
         return cy.get("input[name='customer.address.zipCode']")
     }
 
-    getPhoneTextfield(){
+    getPhoneTextfield() {
         return cy.get("input[name='customer.phoneNumber']")
     }
 
-    getSSNTextfield(){
+    getSSNTextfield() {
         return cy.get("input[name='customer.ssn']")
     }
 
-    getUsernameTextfield(){
+    getUsernameTextfield() {
         return cy.get("input[name='customer.username']")
     }
-    
-    getPasswordTextfield(){
+
+    getPasswordTextfield() {
         return cy.get("input[name='customer.password']")
     }
 
-    getRegisterButton(){
+    getRegisterButton() {
         return cy.get("td input[value='Register']")
     }
 
-    getConfirmPasswordTextfield(){
+    getConfirmPasswordTextfield() {
         return cy.get('#repeatedPassword')
     }
 }

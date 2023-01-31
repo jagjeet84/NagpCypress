@@ -15,7 +15,7 @@ class loginPage{
     }
 
     getSubmit(){
-        return cy.get("input[type='submit']",{ timeout: 10000})
+        return cy.get("input[value='Log In']",{ timeout: 10000})
     }
 
     getMessage(){
@@ -24,6 +24,10 @@ class loginPage{
 
     getRegisterLink(){
         return cy.contains("Register")
+    }
+
+    getLogoutLink(){
+        return cy.contains("Log Out")
     }
 }
 

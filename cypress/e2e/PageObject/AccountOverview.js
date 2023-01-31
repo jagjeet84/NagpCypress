@@ -3,7 +3,7 @@
 class AccountOverview{
 
 getAccountOverviewHeader(){
-    return cy.get("#rightPanel h1")
+    return cy.get("#rightPanel .title")
 }
 }
 

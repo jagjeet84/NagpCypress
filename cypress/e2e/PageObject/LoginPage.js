@@ -1,32 +1,32 @@
 /// <reference types="cypress" />
 
-class loginPage{
+class loginPage {
 
-    visit(){
+    visit() {
         cy.visit('/')
     }
 
-    getUsername(){
-       return cy.get("input[name='username']",{ timeout: 10000})   
+    getUsername() {
+        return cy.get("input[name='username']", { timeout: 10000 })
     }
 
-    getPassword(){
-        return cy.get("input[name='password']",{ timeout: 10000})
+    getPassword() {
+        return cy.get("input[name='password']", { timeout: 10000 })
     }
 
-    getSubmit(){
-        return cy.get("input[value='Log In']",{ timeout: 10000})
+    getSubmit() {
+        return cy.get("input[value='Log In']", { timeout: 10000 })
     }
 
-    getMessage(){
-     return cy.get("#mainPanel #rightPanel > p",{ timeout: 10000})
+    getMessage() {
+        return cy.get("#mainPanel #rightPanel > p", { timeout: 10000 })
     }
 
-    getRegisterLink(){
+    getRegisterLink() {
         return cy.contains("Register")
     }
 
-    getLogoutLink(){
+    getLogoutLink() {
         return cy.contains("Log Out")
     }
 }

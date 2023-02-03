@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-class AccountOverview{
+class AccountOverview {
 
-getAccountOverviewHeader(){
-    return cy.get("#rightPanel .title")
-}
+    getAccountOverviewHeader() {
+        return cy.get("#rightPanel .title")
+    }
 }
 
 export default AccountOverview

@@ -2,7 +2,7 @@
 
 class UserRegistration {
     getTitle() {
-       return cy.get('.title')
+        return cy.get('.title')
     }
 
     getFirstNameTextfield() {

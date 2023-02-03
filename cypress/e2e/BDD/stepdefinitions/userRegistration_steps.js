@@ -12,6 +12,6 @@ When('I click on Register link under login button', () => {
 });
 
 Given('I fill all the details in signup form and click Register', () => {
-	cy.login(Cypress.env('USERNAME'),Cypress.env('PASSWORD'))
+	cy.login(Cypress.env('USERNAME'), Cypress.env('PASSWORD'))
 	cy.registernewuser()
 });

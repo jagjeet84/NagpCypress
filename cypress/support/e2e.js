@@ -15,10 +15,7 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import '../e2e/BDD/hooks.cy'
 //import 'cypress-mochawesome-reporter/register';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
-
-beforeEach(function () {
-    cy.visit('/')
-})

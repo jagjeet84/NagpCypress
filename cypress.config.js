@@ -14,25 +14,19 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   projectId: '75drjy',
-  reporter: 'cypress-mochawesome-reporter',
-  // reporterOptions: {
-  //   reportDir:'./cypress/e2e/Report/mochawesomeReport' ,
-  //   charts: true,
-  //   reportPageTitle: 'custom-title',
-  //   embeddedScreenshots: true,
-  //   inlineAssets: true,
-  //   saveAllAttempts: false,
-  // },
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    defaultCommandTimeout:10000,
+    defaultCommandTimeout: 10000,
     screenshotOnRunFailure: true,
     baseUrl: "https://parabank.parasoft.com/parabank",
     excludeSpecPattern: "**/2-advanced-examples/*",
     specPattern: 'cypress/e2e/BDD/features/*.feature',
     trashAssetsBeforeRuns: true,
+    filterSpecs: true,
+    chromeWebSecurity: false,
+    experimentalSessionAndOrigin: true,
     setupNodeEvents,
     retries: {
       runMode: 0

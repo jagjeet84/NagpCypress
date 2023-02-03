@@ -34,17 +34,10 @@ Cypress.Commands.add('login', (email, password) => {
     login.getSubmit().click()
 })
 
-Cypress.Commands.add('isElementExist', (element) => {
-    cy.window().then((win) => {
-        const identifiedElement = win.document.querySelector(element)
-        cy.log('Object value = ' + identifiedElement)
-    });
-})
 Cypress.Commands.add('registernewuser', () => {
     cy.fixture('userregistration').then(function (regdata) {
         let userRegistration = new UserRegistration()
         let login = new loginPage()
-
         userRegistration.getTitle().then(($el) => {
             if($el.text()==="Signing up is easy!"){
                 userRegistration.getFirstNameTextfield().type(regdata.userregistration.firstname)
@@ -60,6 +53,22 @@ Cypress.Commands.add('registernewuser', () => {
                 userRegistration.getConfirmPasswordTextfield().type(regdata.userregistration.password)
                 userRegistration.getRegisterButton().click()
             } else if($el.text()==="Accounts Overview"){
+                login.getLogoutLink().click();
+            }
+            else if($el.text()==="Error!"){
+                login.getRegisterLink().click()
+                userRegistration.getFirstNameTextfield().type(regdata.userregistration.firstname)
+                userRegistration.getLastNameTextfield().type(regdata.userregistration.lastname)
+                userRegistration.getAddressTextfield().type(regdata.userregistration.address)
+                userRegistration.getCityTextfield().type(regdata.userregistration.city)
+                userRegistration.getStateTextfield().type(regdata.userregistration.state)
+                userRegistration.getZipCodeTextfield().type(regdata.userregistration.zipcode)
+                userRegistration.getPhoneTextfield().type(regdata.userregistration.phone)
+                userRegistration.getSSNTextfield().type(regdata.userregistration.ssn)
+                userRegistration.getUsernameTextfield().type(regdata.userregistration.username)
+                userRegistration.getPasswordTextfield().type(regdata.userregistration.password)
+                userRegistration.getConfirmPasswordTextfield().type(regdata.userregistration.password)
+                userRegistration.getRegisterButton().click()
                 login.getLogoutLink().click();
             }
         })

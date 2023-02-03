@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run script || npm run posttest",
+    "testregression": "npm run regression || npm run posttest",
+    "testsmoke": "npm run smoke || npm run posttest",
+    "regression": "cypress run --spec cypress/e2e/BDD/features/*.feature -e tags=@regression --headed --browser chrome",
+    "smoke": "cypress run --spec cypress/e2e/BDD/features/*.feature -e tags=@smoke --headed --browser chrome",
     "script": "cypress run --spec cypress/e2e/BDD/features/*.feature --headed --browser chrome",
     "posttest": "node cucumber-html-report.js"
   },

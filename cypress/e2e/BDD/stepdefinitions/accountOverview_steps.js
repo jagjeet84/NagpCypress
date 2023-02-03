@@ -3,6 +3,6 @@ import AccountOverview from "../../PageObject/AccountOverview"
 
 let accountOverview = new AccountOverview()
 
-Then('user should be navigate to AccountsOverview', () => {
+Then('I should be navigated to AccountsOverview', () => {
 	accountOverview.getAccountOverviewHeader().should("have.text", "Accounts Overview")
 });

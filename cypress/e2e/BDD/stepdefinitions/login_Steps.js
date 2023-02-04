@@ -1,15 +1,21 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-import loginPage from "../../PageObject/LoginPage";
+import LoginPage from "../../PageObject/LoginPage";
 
-let login = new loginPage()
+let login = new LoginPage()
 
 Given('I navigate to WebApp', function () {
     cy.visit('/')
 })
 
-Given('I enter username as {string} and Password as {string}', (username, password) => {
-    login.getUsername().type(username)
-    login.getPassword().type(password)
+Given('I enter correct credentials', () => {
+    login.getUsername().type(Cypress.env('USERNAME'))
+    login.getPassword().type(Cypress.env('PASSWORD'))
+})
+
+Given('I enter incorrect credentials', () => {
+    cy.log(Cypress.env('USERNAME'))
+    login.getUsername().type(Cypress.env('PASSWORD'))
+    login.getPassword().type('abc')
 })
 
 When('I click on Login button', function () {

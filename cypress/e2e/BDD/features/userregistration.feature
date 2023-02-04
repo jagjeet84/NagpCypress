@@ -1,5 +1,6 @@
 Feature: To Test User Registration functionality
 
+    @regression @smoke
     Scenario: Validate User get registered
         Given I navigate to WebApp
         When I click on Register link under login button

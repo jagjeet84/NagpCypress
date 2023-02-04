@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-class loginPage {
+class LoginPage {
 
     visit() {
         cy.visit('/')
@@ -30,5 +30,4 @@ class loginPage {
         return cy.contains("Log Out")
     }
 }
-
-export default loginPage
+export default LoginPage

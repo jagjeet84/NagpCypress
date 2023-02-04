@@ -53,5 +53,4 @@ class UserRegistration {
         return cy.get('#repeatedPassword')
     }
 }
-
 export default UserRegistration

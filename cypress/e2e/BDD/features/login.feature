@@ -1,14 +1,39 @@
 Feature: To Test Login functionality
 
-  @regression
+  @regression @smoke
   Scenario: Verify Login functionality with incorrect credentials
-    When I enter username as "srlock" and Password as "Jasjeet876"
-    And I click on Login button
+    Given I enter incorrect credentials
+    When I click on Login button
     Then I should see "An internal error has occurred and has been logged." message
 
+  @regression
   Scenario: Verify Login functionality with correct credentials
-    When I click on Register link under login button
-    And I fill all the details in signup form and click Register
-    And I enter username as "sherlock" and Password as "holmes"
+    Given I click on Register link under login button
+    When I fill all the details in signup form and click Register
+    And I click logout link
+    And I enter correct credentials
     And I click on Login button
     Then I should be navigated to AccountsOverview
+
+  @regression @smoke
+  Scenario: Verify Bill Payment Complete
+    Given I click on Register link under login button
+    When I fill all the details in signup form and click Register
+    And I click logout link
+    And I enter correct credentials
+    And I click on Login button
+    Then I click on Bill Pay link
+    And I fill all the details in Bill Payment Service form and click Send Payment
+    And I should be navigated to Bill Payment Complete
+    And I should see Billpayment message correctly
+
+  @regression
+  Scenario: Verify Update Profile successfully
+    Given I click on Register link under login button
+    When I fill all the details in signup form and click Register
+    And I click logout link
+    And I enter correct credentials
+    And I click on Login button
+    Then I click on Update Contact Info link
+    And I should see the correct result as added during the User Registration
+

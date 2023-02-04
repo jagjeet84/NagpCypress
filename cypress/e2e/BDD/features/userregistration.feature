@@ -1,7 +1,7 @@
 Feature: To Test User Registration functionality
 
     @regression @smoke
-    Scenario: Validate User get registered
+    Scenario: Validate User get registered without any issue
         Given I navigate to WebApp
         When I click on Register link under login button
         And I fill all the details in signup form and click Register

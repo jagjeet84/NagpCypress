@@ -1,4 +1,4 @@
-Feature: To Test Login functionality
+Feature: To Test Login functionality along with some other areas 
 
   @regression @smoke
   Scenario: Verify Login functionality with incorrect credentials

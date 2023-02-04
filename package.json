@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run script || npm run posttest",
-    "testregression": "npm run regression || npm run posttest",
-    "testsmoke": "npm run smoke || npm run posttest",
+    "test": "(npm run archive && npm run script) || npm run cucumberreport",
+    "pretest": "npm run archive",
+    "testregression": "(npm run archive && npm run regression) || npm run cucumberreport",
+    "testsmoke": "(npm run archive && npm run smoke) || npm run cucumberreport",
     "regression": "cypress run --spec cypress/e2e/BDD/features/*.feature -e tags=@regression --headed --browser chrome",
     "smoke": "cypress run --spec cypress/e2e/BDD/features/*.feature -e tags=@smoke --headed --browser chrome",
     "script": "cypress run --spec cypress/e2e/BDD/features/*.feature --headed --browser chrome",
-    "posttest": "node cucumber-html-report.js"
+    "cucumberreport": "node cucumber-html-report.js",
+    "archive": "node archive.js",
+    "cloudexecution": "cypress run --spec cypress/e2e/BDD/features/*.feature --record --key e00a18f9-b3c4-4c77-b551-b9f56e024a6b"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/e2e/BDD/stepdefinitions/*.js",
@@ -25,11 +28,13 @@
   "devDependencies": {
     "@cypress/xpath": "2.0.3",
     "cypress": "12.3.0",
-    "cypress-mochawesome-reporter": "^3.2.3"
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "fs": "0.0.1-security"
   },
   "dependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^15.1.2",
     "@cypress/browserify-preprocessor": "^3.0.2",
+    "fs-extra": "^11.1.0",
     "multiple-cucumber-html-reporter": "^3.1.0"
   }
 }

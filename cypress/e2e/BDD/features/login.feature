@@ -22,9 +22,9 @@ Feature: To Test Login functionality
     And I click logout link
     And I enter correct credentials
     And I click on Login button
-    Then I click on Bill Pay link
+    And I click on Bill Pay link
     And I fill all the details in Bill Payment Service form and click Send Payment
-    And I should be navigated to Bill Payment Complete
+    Then I should be navigated to Bill Payment Complete
     And I should see Billpayment message correctly
 
   @regression
@@ -34,6 +34,5 @@ Feature: To Test Login functionality
     And I click logout link
     And I enter correct credentials
     And I click on Login button
-    Then I click on Update Contact Info link
-    And I should see the correct result as added during the User Registration
-
+    And I click on Update Contact Info link
+    Then I should see the correct result as added during the User Registration

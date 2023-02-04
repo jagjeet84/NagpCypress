@@ -6,15 +6,15 @@ class AccountOverview {
         return cy.get("#rightPanel .title")
     }
 
-    getBillPaymentComplete(){
+    getBillPaymentComplete() {
         return cy.get('[ng-show="showResult"] > .title')
     }
 
-    getBillPayLink(){
+    getBillPayLink() {
         return cy.contains('Bill Pay')
     }
 
-    getUpdateContactInfoLink(){
+    getUpdateContactInfoLink() {
         return cy.contains('Update Contact Info')
     }
 }
